@@ -35,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 // Android Studio Narwhal 3 Feature Drop | 2025.1.3
@@ -51,6 +55,10 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    // Hilt Navigation (for Fragments only - contains hiltNavGraphViewModels)
+    implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
+    // For SavedStateHandle support
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
 
     // Retrofit
     implementation(libs.retrofit)
